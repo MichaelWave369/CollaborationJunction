@@ -32,7 +32,7 @@ Node 20+ is recommended; no npm install is necessary.
 
 ## Deployment
 
-`.github/workflows/pages.yml` deploys `site/` to GitHub Pages after the validation job succeeds on `main`. Configure **Settings > Pages > Build and deployment > Source: GitHub Actions** if the repository still uses branch publishing. PRs run validation but do not publish.
+`.github/workflows/pages.yml` deploys `site/` to GitHub Pages on pushes to `main`; its publish job runs the tests first. Configure **Settings > Pages > Build and deployment > Source: GitHub Actions** if the repository still uses branch publishing. PRs run validation but do not publish.
 
 Expected project URL after deploy: https://michaelwave369.github.io/CollaborationJunction/
 
