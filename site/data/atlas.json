@@ -32,12 +32,13 @@
     "name": "Netflix",
     "feature": "Personalized title recommendations",
     "domain": "Entertainment",
-    "type": "Predictive recommendation",
+    "type": "Machine learning / recommendation",
     "evidence": "DOCUMENTED",
     "reviewed": "2026-10-12",
-    "summary": "Netflix describes an algorithmic system that predicts preferences using viewing interactions, title metadata and other signals.",
-    "limitation": "The help page documents predictive ranking, but does not establish a specific model architecture for each feature.",
+    "summary": "Netflix Research explicitly identifies personalized recommendations as a machine-learning use case, while its Help Center explains member-facing ranking and preference signals.",
+    "limitation": "Netflix documents ML use in recommendations, but does not reveal the exact model deployed for every ranking surface or member.",
     "sources": [
+      "netflix-research-ml",
       "netflix-rec"
     ]
   },
