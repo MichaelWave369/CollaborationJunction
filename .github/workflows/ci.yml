@@ -13,7 +13,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate provenance and site assets
-        run: node --test tests/*.test.mjs
-      - name: Check JavaScript syntax
-        run: node --check site/assets/app.js
+      - name: Validate source records and HAI-001 research integrity
+        run: |
+          node --test tests/*.test.mjs
+          node --check site/assets/app.js
+          node scripts/hai-001/verify-lock.mjs
+          node scripts/hai-001/validate-receipt.mjs examples/hai-001-synthetic-receipt.json

@@ -1,0 +1,129 @@
+{
+  "protocol": "HAI-001",
+  "version": "0.1.0",
+  "status": "FROZEN_FOR_REVIEW_NOT_RUN",
+  "task_count": 12,
+  "matching_note": "Four families of three tasks each. Complexity comparability is a design hypothesis and is not empirically demonstrated. Assess with a separate calibration before causal interpretation.",
+  "tasks": [
+    {
+      "id": "HAI-001-T01",
+      "family": "Text",
+      "title": "Canonical tag normalization",
+      "spec": "Input: {tags: string[]}. Trim Unicode whitespace, lowercase, replace every internal run of whitespace with one hyphen, omit empty tags, deduplicate after normalization, and keep first-occurrence order. Return string[].",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 1
+    },
+    {
+      "id": "HAI-001-T02",
+      "family": "Text",
+      "title": "Display-name initials",
+      "spec": "Input: {names: string[]}. Entries contain ASCII letters and spaces. Trim outer whitespace; split on one or more ASCII whitespace characters. Return one uppercase initial for a single-word name or uppercase initials of the first and last words for multiword names, preserving order.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 2
+    },
+    {
+      "id": "HAI-001-T03",
+      "family": "Text",
+      "title": "Conservative email masking",
+      "spec": "Input: {emails: string[]}. Trim each entry. Valid addresses have exactly one @, nonempty local and domain, no whitespace, and a domain with two or more nonempty dot-delimited parts. Return for valid entries: lowercase first local character + '***@' + lowercased domain; invalid entries become null. Output (string|null)[] preserving order.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 3
+    },
+    {
+      "id": "HAI-001-T04",
+      "family": "Aggregation",
+      "title": "Department cent totals",
+      "spec": "Input: {rows: {dept:string,cents:number}[]}. cents are signed integers. Sum cents per exact case-sensitive department and return array of {dept,totalCents} sorted by dept ascending using ASCII lexical order. Empty input returns [].",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 4
+    },
+    {
+      "id": "HAI-001-T05",
+      "family": "Aggregation",
+      "title": "Fixed-window averages",
+      "spec": "Input: {values:number[],window:number}. Values are integers, window is a positive integer. Return the arithmetic mean of each consecutive full window (left-to-right). If the list is shorter than window, return []. Cases use exact binary-representable results.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 5
+    },
+    {
+      "id": "HAI-001-T06",
+      "family": "Aggregation",
+      "title": "Minute bucket counts",
+      "spec": "Input: {seconds:number[]}. Each value is a nonnegative integer timestamp in seconds. Group by Math.floor(seconds/60), return [{minute,count}] in ascending minute order. Repeated seconds count separately.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 6
+    },
+    {
+      "id": "HAI-001-T07",
+      "family": "Records",
+      "title": "Last-write-wins events",
+      "spec": "Input: {events:{id:string,value:(string|number|null)}[]}. Deduplicate by case-sensitive id. Preserve ordering of each id's first appearance, but use its most recent value. Return array of {id,value}.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 7
+    },
+    {
+      "id": "HAI-001-T08",
+      "family": "Records",
+      "title": "Left-join user scores",
+      "spec": "Input: {users:{id:string,name:string}[],scores:{id:string,score:number}[]}. For each user in original order, return {id,name,score}. Match scores by exact id; choose last score if repeated; assign null if missing. Do not add score-only users.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 8
+    },
+    {
+      "id": "HAI-001-T09",
+      "family": "Records",
+      "title": "Priority ticket order",
+      "spec": "Input: {tickets:{id:string,priority:number,created:number}[]}. Return an array of ticket ids sorted by priority descending, then integer created ascending, then id ASCII lexicographic ascending. No ids repeat.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 9
+    },
+    {
+      "id": "HAI-001-T10",
+      "family": "Structure",
+      "title": "Merge inclusive intervals",
+      "spec": "Input: {intervals:[number,number][]}. Endpoints are integers and lower<=upper. Sort by lower endpoint, merge overlapping OR adjacent closed intervals (next.lower <= current.upper+1), and return ascending [lower,upper][]; do not mutate input.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 10
+    },
+    {
+      "id": "HAI-001-T11",
+      "family": "Structure",
+      "title": "Clockwise matrix rotation",
+      "spec": "Input: {matrix:number[][]}. Matrix is rectangular, may be empty but nonempty rows have positive length. Return a new array rotated 90 degrees clockwise. For an empty matrix, return [].",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 11
+    },
+    {
+      "id": "HAI-001-T12",
+      "family": "Structure",
+      "title": "Dependency layers",
+      "spec": "Input: {nodes:string[],edges:[string,string][]}. Unique ASCII node ids. Edge [a,b] means a must finish before b. Return successive topological layers of available zero-indegree nodes; sort each layer lexicographically. Return [] for no nodes, null for cycles. Every node appears once. All edge endpoints belong to nodes.",
+      "interface": "ECMAScript module exports named function solve(input) returning a JSON-compatible value synchronously.",
+      "runtime": "Node.js 22 standard library only; no file, network, child process, or time-dependent behavior.",
+      "candidate_difficulty": "UNVALIDATED",
+      "order": 12
+    }
+  ]
+}

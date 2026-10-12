@@ -23,8 +23,8 @@ test("external research distinguishes outcomes from generalization",()=>{
 test("draft experiment is explicitly not run",()=>{
  const protocol=readFileSync(new URL("../docs/HAI-001.md",import.meta.url),"utf8");
  assert.match(protocol,/NOT RUN/);
- assert.match(protocol,/Human-only/);
- assert.match(protocol,/Model first-pass/);
+ assert.match(protocol,/human only/i);
+ assert.match(protocol,/bounded model-first/i);
  assert.match(protocol,/consent/i);
 });
 test("pages bundle and independent workflows exist",()=>{

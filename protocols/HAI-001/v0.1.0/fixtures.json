@@ -1,0 +1,1216 @@
+{
+  "protocol": "HAI-001",
+  "version": "0.1.0",
+  "purpose": "Precommitted public acceptance examples. Visible to every condition. These fixtures test a narrow finite sample and do not establish general correctness.",
+  "groups": [
+    {
+      "task_id": "HAI-001-T01",
+      "cases": [
+        {
+          "case_id": "HAI-001-T01-C01",
+          "input": {
+            "tags": [
+              " Alpha ",
+              "ALPHA",
+              "beta two",
+              "",
+              " beta   two"
+            ]
+          },
+          "expected": [
+            "alpha",
+            "beta-two"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T01-C02",
+          "input": {
+            "tags": [
+              "Data\tQuality",
+              "data quality",
+              "RE-ENTRY"
+            ]
+          },
+          "expected": [
+            "data-quality",
+            "re-entry"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T01-C03",
+          "input": {
+            "tags": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T01-C04",
+          "input": {
+            "tags": [
+              "  abc  def  ",
+              "abc-def",
+              "AB C"
+            ]
+          },
+          "expected": [
+            "abc-def",
+            "ab-c"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T01-C05",
+          "input": {
+            "tags": [
+              "A",
+              " a ",
+              "B",
+              "b",
+              "a"
+            ]
+          },
+          "expected": [
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T02",
+      "cases": [
+        {
+          "case_id": "HAI-001-T02-C01",
+          "input": {
+            "names": [
+              "Ada Lovelace",
+              " Grace  Hopper ",
+              "Prince"
+            ]
+          },
+          "expected": [
+            "AL",
+            "GH",
+            "P"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T02-C02",
+          "input": {
+            "names": [
+              "marie curie",
+              "Alan Mathison Turing"
+            ]
+          },
+          "expected": [
+            "MC",
+            "AT"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T02-C03",
+          "input": {
+            "names": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T02-C04",
+          "input": {
+            "names": [
+              "  john ",
+              " john  q  public "
+            ]
+          },
+          "expected": [
+            "J",
+            "JP"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T02-C05",
+          "input": {
+            "names": [
+              "bob smith",
+              "a b"
+            ]
+          },
+          "expected": [
+            "BS",
+            "AB"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T03",
+      "cases": [
+        {
+          "case_id": "HAI-001-T03-C01",
+          "input": {
+            "emails": [
+              "Ada@Example.COM",
+              "b@foo.org",
+              "not-an-email"
+            ]
+          },
+          "expected": [
+            "a***@example.com",
+            "b***@foo.org",
+            null
+          ]
+        },
+        {
+          "case_id": "HAI-001-T03-C02",
+          "input": {
+            "emails": [
+              " john.doe@Acme.io ",
+              "x@@y.z"
+            ]
+          },
+          "expected": [
+            "j***@acme.io",
+            null
+          ]
+        },
+        {
+          "case_id": "HAI-001-T03-C03",
+          "input": {
+            "emails": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T03-C04",
+          "input": {
+            "emails": [
+              "@mail.com",
+              "a@b",
+              "a@b.c"
+            ]
+          },
+          "expected": [
+            null,
+            null,
+            "a***@b.c"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T03-C05",
+          "input": {
+            "emails": [
+              "USER@sub.domain.net",
+              "a b@example.com"
+            ]
+          },
+          "expected": [
+            "u***@sub.domain.net",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T04",
+      "cases": [
+        {
+          "case_id": "HAI-001-T04-C01",
+          "input": {
+            "rows": [
+              {
+                "dept": "ops",
+                "cents": 120
+              },
+              {
+                "dept": "eng",
+                "cents": 500
+              },
+              {
+                "dept": "ops",
+                "cents": -20
+              }
+            ]
+          },
+          "expected": [
+            {
+              "dept": "eng",
+              "totalCents": 500
+            },
+            {
+              "dept": "ops",
+              "totalCents": 100
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T04-C02",
+          "input": {
+            "rows": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T04-C03",
+          "input": {
+            "rows": [
+              {
+                "dept": "A",
+                "cents": 0
+              }
+            ]
+          },
+          "expected": [
+            {
+              "dept": "A",
+              "totalCents": 0
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T04-C04",
+          "input": {
+            "rows": [
+              {
+                "dept": "b",
+                "cents": 5
+              },
+              {
+                "dept": "B",
+                "cents": -5
+              }
+            ]
+          },
+          "expected": [
+            {
+              "dept": "B",
+              "totalCents": -5
+            },
+            {
+              "dept": "b",
+              "totalCents": 5
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T04-C05",
+          "input": {
+            "rows": [
+              {
+                "dept": "x",
+                "cents": -9
+              },
+              {
+                "dept": "x",
+                "cents": 5
+              },
+              {
+                "dept": "y",
+                "cents": 2
+              }
+            ]
+          },
+          "expected": [
+            {
+              "dept": "x",
+              "totalCents": -4
+            },
+            {
+              "dept": "y",
+              "totalCents": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T05",
+      "cases": [
+        {
+          "case_id": "HAI-001-T05-C01",
+          "input": {
+            "values": [
+              2,
+              4,
+              6,
+              8
+            ],
+            "window": 2
+          },
+          "expected": [
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "case_id": "HAI-001-T05-C02",
+          "input": {
+            "values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "window": 3
+          },
+          "expected": [
+            2,
+            3
+          ]
+        },
+        {
+          "case_id": "HAI-001-T05-C03",
+          "input": {
+            "values": [],
+            "window": 1
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T05-C04",
+          "input": {
+            "values": [
+              5,
+              10
+            ],
+            "window": 3
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T05-C05",
+          "input": {
+            "values": [
+              2,
+              3,
+              4
+            ],
+            "window": 2
+          },
+          "expected": [
+            2.5,
+            3.5
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T06",
+      "cases": [
+        {
+          "case_id": "HAI-001-T06-C01",
+          "input": {
+            "seconds": [
+              0,
+              59,
+              60,
+              119,
+              120
+            ]
+          },
+          "expected": [
+            {
+              "minute": 0,
+              "count": 2
+            },
+            {
+              "minute": 1,
+              "count": 2
+            },
+            {
+              "minute": 2,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T06-C02",
+          "input": {
+            "seconds": [
+              61,
+              1,
+              60,
+              61
+            ]
+          },
+          "expected": [
+            {
+              "minute": 0,
+              "count": 1
+            },
+            {
+              "minute": 1,
+              "count": 3
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T06-C03",
+          "input": {
+            "seconds": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T06-C04",
+          "input": {
+            "seconds": [
+              3599,
+              3600
+            ]
+          },
+          "expected": [
+            {
+              "minute": 59,
+              "count": 1
+            },
+            {
+              "minute": 60,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T06-C05",
+          "input": {
+            "seconds": [
+              120,
+              120,
+              179,
+              180
+            ]
+          },
+          "expected": [
+            {
+              "minute": 2,
+              "count": 3
+            },
+            {
+              "minute": 3,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T07",
+      "cases": [
+        {
+          "case_id": "HAI-001-T07-C01",
+          "input": {
+            "events": [
+              {
+                "id": "a",
+                "value": 1
+              },
+              {
+                "id": "b",
+                "value": 2
+              },
+              {
+                "id": "a",
+                "value": 3
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "a",
+              "value": 3
+            },
+            {
+              "id": "b",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T07-C02",
+          "input": {
+            "events": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T07-C03",
+          "input": {
+            "events": [
+              {
+                "id": "a",
+                "value": null
+              },
+              {
+                "id": "a",
+                "value": "new"
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "a",
+              "value": "new"
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T07-C04",
+          "input": {
+            "events": [
+              {
+                "id": "B",
+                "value": 1
+              },
+              {
+                "id": "b",
+                "value": 2
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "B",
+              "value": 1
+            },
+            {
+              "id": "b",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T07-C05",
+          "input": {
+            "events": [
+              {
+                "id": "z",
+                "value": 0
+              },
+              {
+                "id": "y",
+                "value": 1
+              },
+              {
+                "id": "x",
+                "value": 2
+              },
+              {
+                "id": "y",
+                "value": 4
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "z",
+              "value": 0
+            },
+            {
+              "id": "y",
+              "value": 4
+            },
+            {
+              "id": "x",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T08",
+      "cases": [
+        {
+          "case_id": "HAI-001-T08-C01",
+          "input": {
+            "users": [
+              {
+                "id": "a",
+                "name": "Ada"
+              },
+              {
+                "id": "b",
+                "name": "Ben"
+              }
+            ],
+            "scores": [
+              {
+                "id": "b",
+                "score": 5
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "a",
+              "name": "Ada",
+              "score": null
+            },
+            {
+              "id": "b",
+              "name": "Ben",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T08-C02",
+          "input": {
+            "users": [],
+            "scores": [
+              {
+                "id": "x",
+                "score": 3
+              }
+            ]
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T08-C03",
+          "input": {
+            "users": [
+              {
+                "id": "x",
+                "name": "X"
+              }
+            ],
+            "scores": [
+              {
+                "id": "x",
+                "score": 1
+              },
+              {
+                "id": "x",
+                "score": 7
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "x",
+              "name": "X",
+              "score": 7
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T08-C04",
+          "input": {
+            "users": [
+              {
+                "id": "A",
+                "name": "Upper"
+              }
+            ],
+            "scores": [
+              {
+                "id": "a",
+                "score": 9
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "A",
+              "name": "Upper",
+              "score": null
+            }
+          ]
+        },
+        {
+          "case_id": "HAI-001-T08-C05",
+          "input": {
+            "users": [
+              {
+                "id": "2",
+                "name": "Two"
+              },
+              {
+                "id": "1",
+                "name": "One"
+              }
+            ],
+            "scores": [
+              {
+                "id": "1",
+                "score": 0
+              },
+              {
+                "id": "2",
+                "score": -2
+              }
+            ]
+          },
+          "expected": [
+            {
+              "id": "2",
+              "name": "Two",
+              "score": -2
+            },
+            {
+              "id": "1",
+              "name": "One",
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T09",
+      "cases": [
+        {
+          "case_id": "HAI-001-T09-C01",
+          "input": {
+            "tickets": [
+              {
+                "id": "a",
+                "priority": 2,
+                "created": 10
+              },
+              {
+                "id": "b",
+                "priority": 3,
+                "created": 20
+              },
+              {
+                "id": "c",
+                "priority": 3,
+                "created": 10
+              }
+            ]
+          },
+          "expected": [
+            "c",
+            "b",
+            "a"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T09-C02",
+          "input": {
+            "tickets": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T09-C03",
+          "input": {
+            "tickets": [
+              {
+                "id": "z",
+                "priority": 1,
+                "created": 0
+              }
+            ]
+          },
+          "expected": [
+            "z"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T09-C04",
+          "input": {
+            "tickets": [
+              {
+                "id": "b",
+                "priority": 5,
+                "created": 1
+              },
+              {
+                "id": "a",
+                "priority": 5,
+                "created": 1
+              }
+            ]
+          },
+          "expected": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "case_id": "HAI-001-T09-C05",
+          "input": {
+            "tickets": [
+              {
+                "id": "t",
+                "priority": 4,
+                "created": 40
+              },
+              {
+                "id": "u",
+                "priority": 4,
+                "created": 39
+              },
+              {
+                "id": "v",
+                "priority": 1,
+                "created": 1
+              }
+            ]
+          },
+          "expected": [
+            "u",
+            "t",
+            "v"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T10",
+      "cases": [
+        {
+          "case_id": "HAI-001-T10-C01",
+          "input": {
+            "intervals": [
+              [
+                1,
+                3
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                9
+              ]
+            ]
+          },
+          "expected": [
+            [
+              1,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T10-C02",
+          "input": {
+            "intervals": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T10-C03",
+          "input": {
+            "intervals": [
+              [
+                5,
+                8
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                6
+              ]
+            ]
+          },
+          "expected": [
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T10-C04",
+          "input": {
+            "intervals": [
+              [
+                -3,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                2,
+                3
+              ]
+            ]
+          },
+          "expected": [
+            [
+              -3,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T10-C05",
+          "input": {
+            "intervals": [
+              [
+                4,
+                5
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                7,
+                7
+              ]
+            ]
+          },
+          "expected": [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              7,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T11",
+      "cases": [
+        {
+          "case_id": "HAI-001-T11-C01",
+          "input": {
+            "matrix": [
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                4,
+                5,
+                6
+              ]
+            ]
+          },
+          "expected": [
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T11-C02",
+          "input": {
+            "matrix": [
+              [
+                1
+              ]
+            ]
+          },
+          "expected": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T11-C03",
+          "input": {
+            "matrix": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T11-C04",
+          "input": {
+            "matrix": [
+              [
+                1,
+                2,
+                3
+              ]
+            ]
+          },
+          "expected": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T11-C05",
+          "input": {
+            "matrix": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          },
+          "expected": [
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HAI-001-T12",
+      "cases": [
+        {
+          "case_id": "HAI-001-T12-C01",
+          "input": {
+            "nodes": [
+              "a",
+              "b",
+              "c"
+            ],
+            "edges": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "b",
+                "c"
+              ]
+            ]
+          },
+          "expected": [
+            [
+              "a"
+            ],
+            [
+              "b"
+            ],
+            [
+              "c"
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T12-C02",
+          "input": {
+            "nodes": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ],
+            "edges": [
+              [
+                "a",
+                "c"
+              ],
+              [
+                "b",
+                "c"
+              ]
+            ]
+          },
+          "expected": [
+            [
+              "a",
+              "b",
+              "d"
+            ],
+            [
+              "c"
+            ]
+          ]
+        },
+        {
+          "case_id": "HAI-001-T12-C03",
+          "input": {
+            "nodes": [],
+            "edges": []
+          },
+          "expected": []
+        },
+        {
+          "case_id": "HAI-001-T12-C04",
+          "input": {
+            "nodes": [
+              "a",
+              "b"
+            ],
+            "edges": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "b",
+                "a"
+              ]
+            ]
+          },
+          "expected": null
+        },
+        {
+          "case_id": "HAI-001-T12-C05",
+          "input": {
+            "nodes": [
+              "x",
+              "z",
+              "y"
+            ],
+            "edges": [
+              [
+                "x",
+                "z"
+              ]
+            ]
+          },
+          "expected": [
+            [
+              "x",
+              "y"
+            ],
+            [
+              "z"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

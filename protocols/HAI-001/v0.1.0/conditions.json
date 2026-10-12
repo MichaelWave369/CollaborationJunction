@@ -1,0 +1,42 @@
+{
+  "protocol": "HAI-001",
+  "version": "0.1.0",
+  "status": "CONDITIONS_DEFINED_NOT_EXECUTED",
+  "expected_cases_per_task": 5,
+  "time_limit_minutes": 25,
+  "comparable_budget": {
+    "starting_repo": "Task-specific blank Node 22 module with solve(input) interface.",
+    "tools": "Node.js 22, offline editor, local tests, no external packages. Same OS and CPU class for human groups where feasible.",
+    "clock": "Wall-clock per task; hard limit 25 min; no pauses unless recorded.",
+    "tests": "All groups can inspect the same public acceptance fixtures; scoring tests are immutable."
+  },
+  "arms": [
+    {
+      "id": "A",
+      "name": "Human only",
+      "rule": "Human works unaided by generative AI; ordinary editor and Node local tooling allowed."
+    },
+    {
+      "id": "B",
+      "name": "Human + local small model",
+      "rule": "Human can ask/correct one identified local model; record full checkpoint, quantization, prompts and tools. No cloud model."
+    },
+    {
+      "id": "C",
+      "name": "Human + cloud model",
+      "rule": "Human can ask/correct one identified cloud model; record version, usage and limits. No secondary models."
+    },
+    {
+      "id": "D",
+      "name": "Bounded model-first",
+      "rule": "One model gets the task once and can produce one answer without mid-task human corrections. Human selects task, configures environment and records the result; arm is not machine self-direction."
+    }
+  ],
+  "design": {
+    "block": "Text T01-03; Aggregation T04-06; Records T07-09; Structure T10-12.",
+    "assignment": "Before first eligible trial, register a random-seed, blocked task-by-condition rotation and task order in a separate append-only assignment file. Each task occurs in all four conditions across independent rounds or participants; never have the same investigator repeat a memorized task across arms and interpret it as unbiased.",
+    "calibration": "Task difficulty matched only tentatively. Run and document a separate formative calibration without treating calibration observations as confirmatory results.",
+    "consent": "Only investigator-self-tests without recruited participants until appropriate consent and any necessary review are in place.",
+    "exclusions": "Withdrawals, interruptions, crashes, noncompliance and model outages are logged; retain all registered tasks in intention-to-treat summaries and show per-protocol results separately."
+  }
+}
