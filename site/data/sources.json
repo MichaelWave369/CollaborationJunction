@@ -68,5 +68,12 @@
     "url": "https://doi.org/10.1126/sciadv.adn5290",
     "kind": "Peer-reviewed study",
     "year": "2024"
+  },
+  {
+    "id": "netflix-research-ml",
+    "name": "Netflix Research · Machine Learning Platform",
+    "url": "https://research.netflix.com/research-area/machine-learning-platform",
+    "kind": "First-party research documentation",
+    "year": "Current page"
   }
 ]
