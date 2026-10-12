@@ -1,0 +1,35 @@
+[
+  {
+    "id": "writing",
+    "title": "Professional writing tasks",
+    "year": 2023,
+    "tag": "Assistance can help",
+    "direction": "positive",
+    "outcome": "40% less time · 18% higher quality",
+    "summary": "In a preregistered experiment with 453 professionals, access to ChatGPT improved performance on selected writing tasks.",
+    "caveat": "Task-specific evidence, not proof that every kind of AI assistance improves all work.",
+    "source": "noy-zhang"
+  },
+  {
+    "id": "coding",
+    "title": "Experienced open-source developers",
+    "year": 2025,
+    "tag": "Assistance can slow",
+    "direction": "negative",
+    "outcome": "19% longer task time",
+    "summary": "METR's randomized study observed experienced developers completing work more slowly with early-2025 AI tools than without.",
+    "caveat": "A snapshot of specific developers, tasks, repositories and tools, not a universal statement about software development.",
+    "source": "metr-2025"
+  },
+  {
+    "id": "creativity",
+    "title": "Story writing and collective novelty",
+    "year": 2024,
+    "tag": "Trade-offs exist",
+    "direction": "mixed",
+    "outcome": "Higher individual ratings · greater similarity",
+    "summary": "An online experiment found AI ideas boosted evaluated short-story creativity while making stories more similar across writers.",
+    "caveat": "A limited creative-writing setting; originality, quality and diversity require distinct measures.",
+    "source": "doshi-hauser"
+  }
+]

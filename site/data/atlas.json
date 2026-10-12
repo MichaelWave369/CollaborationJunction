@@ -1,0 +1,72 @@
+[
+  {
+    "id": "gmail-filter",
+    "name": "Gmail",
+    "feature": "Spam and phishing filtering",
+    "domain": "Communication",
+    "type": "Machine learning",
+    "evidence": "DOCUMENTED",
+    "reviewed": "2026-10-12",
+    "summary": "Google describes AI-enhanced spam filtering as part of Gmail's protective systems.",
+    "limitation": "This documents a particular protective feature, not all of Gmail or a model-by-model independent audit.",
+    "sources": [
+      "google-gmail"
+    ]
+  },
+  {
+    "id": "maps-traffic",
+    "name": "Google Maps",
+    "feature": "Traffic forecasts and route estimates",
+    "domain": "Navigation",
+    "type": "Machine learning",
+    "evidence": "DOCUMENTED",
+    "reviewed": "2026-10-12",
+    "summary": "Google explains its use of historical and live traffic data with machine-learning predictions in navigation.",
+    "limitation": "Published product explanation; internal implementation and present-day configurations are not independently inspected.",
+    "sources": [
+      "google-maps"
+    ]
+  },
+  {
+    "id": "netflix-recommendations",
+    "name": "Netflix",
+    "feature": "Personalized title recommendations",
+    "domain": "Entertainment",
+    "type": "Predictive recommendation",
+    "evidence": "DOCUMENTED",
+    "reviewed": "2026-10-12",
+    "summary": "Netflix describes an algorithmic system that predicts preferences using viewing interactions, title metadata and other signals.",
+    "limitation": "The help page documents predictive ranking, but does not establish a specific model architecture for each feature.",
+    "sources": [
+      "netflix-rec"
+    ]
+  },
+  {
+    "id": "visa-decision-manager",
+    "name": "Visa",
+    "feature": "Decision Manager fraud risk scoring",
+    "domain": "Finance",
+    "type": "Machine learning",
+    "evidence": "DOCUMENTED",
+    "reviewed": "2026-10-12",
+    "summary": "Visa describes machine-learning-driven fraud risk assessment using transaction signals.",
+    "limitation": "Vendor documentation supports deployment claims; false-positive rates and performance are not independently evaluated here.",
+    "sources": [
+      "visa-fraud"
+    ]
+  },
+  {
+    "id": "fda-ai-devices",
+    "name": "FDA-listed devices",
+    "feature": "AI-enabled medical device functions",
+    "domain": "Healthcare",
+    "type": "Machine learning / varied AI",
+    "evidence": "DOCUMENTED",
+    "reviewed": "2026-10-12",
+    "summary": "The FDA documents authorized AI-enabled device categories, including diagnostic and imaging software.",
+    "limitation": "This is a regulator-level category, not a single product; authorization does not imply zero risk or effectiveness for every use.",
+    "sources": [
+      "fda-devices"
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "oecd-2024",
+    "name": "OECD · Explanatory memorandum on updated AI system definition",
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/03/explanatory-memorandum-on-the-updated-oecd-definition-of-an-ai-system_3c815e51/623da898-en.pdf",
+    "kind": "Definition",
+    "year": "2024"
+  },
+  {
+    "id": "nist-rmf",
+    "name": "NIST · AI Risk Management Framework",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "kind": "Framework",
+    "year": "2023+"
+  },
+  {
+    "id": "google-gmail",
+    "name": "Google Safety Center · Gmail protections",
+    "url": "https://safety.google/intl/en_us/products/gmail/",
+    "kind": "Vendor documentation",
+    "year": "Current page"
+  },
+  {
+    "id": "google-maps",
+    "name": "Google · How AI helps predict traffic and routes",
+    "url": "https://blog.google/products-and-platforms/products/maps/google-maps-101-how-ai-helps-predict-traffic-and-determine-routes/",
+    "kind": "Vendor explanation",
+    "year": "2020"
+  },
+  {
+    "id": "netflix-rec",
+    "name": "Netflix Help Center · Recommendations system",
+    "url": "https://help.netflix.com/en/node/100639/",
+    "kind": "Product documentation",
+    "year": "Current page"
+  },
+  {
+    "id": "visa-fraud",
+    "name": "Visa · AI solutions for fraud detection",
+    "url": "https://corporate.visa.com/en/solutions/visa-protect/insights/ai-fraud-detection.html",
+    "kind": "Vendor explanation",
+    "year": "Current page"
+  },
+  {
+    "id": "fda-devices",
+    "name": "FDA · AI-enabled medical devices",
+    "url": "https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices",
+    "kind": "Regulator documentation",
+    "year": "2026"
+  },
+  {
+    "id": "noy-zhang",
+    "name": "Noy & Zhang · Experimental evidence on productivity",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37440646/",
+    "kind": "Peer-reviewed study",
+    "year": "2023"
+  },
+  {
+    "id": "metr-2025",
+    "name": "METR · Experienced open-source developer productivity",
+    "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+    "kind": "Research report",
+    "year": "2025"
+  },
+  {
+    "id": "doshi-hauser",
+    "name": "Doshi & Hauser · Creativity and collective diversity",
+    "url": "https://doi.org/10.1126/sciadv.adn5290",
+    "kind": "Peer-reviewed study",
+    "year": "2024"
+  }
+]
