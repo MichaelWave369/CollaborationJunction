@@ -1,0 +1,36 @@
+{
+  "protocol": "HAI-001",
+  "task_pack_sha256": "3427497a87ff11f7f39beb32daea7b454457c0ba4c7ca9ed04debc4d647bf803",
+  "trial_id": "SYNTHETIC-001",
+  "task_id": "HAI-001-T01",
+  "condition": "A",
+  "record_kind": "SYNTHETIC",
+  "status": "NOT_RUN",
+  "model_id": "none",
+  "environment": "Synthetic fixture; no participant or model executed",
+  "notes": "Illustration of receipt structure only. Pass bits fabricated for validator coverage; must never enter experimental results.",
+  "human_decisions": [],
+  "exclusions": [],
+  "test_results": [
+    {
+      "case_id": "HAI-001-T01-C01",
+      "passed": true
+    },
+    {
+      "case_id": "HAI-001-T01-C02",
+      "passed": false
+    },
+    {
+      "case_id": "HAI-001-T01-C03",
+      "passed": true
+    },
+    {
+      "case_id": "HAI-001-T01-C04",
+      "passed": false
+    },
+    {
+      "case_id": "HAI-001-T01-C05",
+      "passed": true
+    }
+  ]
+}

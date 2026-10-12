@@ -1,0 +1,31 @@
+{
+  "protocol": "HAI-001",
+  "version": "0.1.0",
+  "status": "PREREGISTERED_NOT_SCORED",
+  "primary": {
+    "name": "Predeclared acceptance-case pass proportion",
+    "numerator": "Number of exact JSON-deep-equal outputs on all five predeclared cases for the assigned task",
+    "denominator": "Five cases per task",
+    "score_range": [
+      0,
+      1
+    ],
+    "comparator": "JSON structural deep equality with numeric equality; object key order ignored; array order significant.",
+    "failure": "Missing outputs, exceptions, timeout, crash or malformed output count as a failed case. Do not drop failed cases.",
+    "aggregation": "Report task-level passes/5 and condition-level task averages, with all denominator counts; no pooled causal effect asserted from pilot."
+  },
+  "secondary": {
+    "wall_time_seconds": "Measured from ready-to-start until submission, including waiting and retries.",
+    "active_human_seconds": "Separately self-recorded active human time; may be imprecise.",
+    "human_corrections": "Count participant corrective turns and edits separately.",
+    "unaided_explanation": "Blinded rubric of 0,1,2 after AI access ends: 0 cannot explain main flow, 1 partial, 2 correct explanation of flow and an edge case.",
+    "unaided_modification": "Binary precommitted post-task modification pass, scored without model assistance.",
+    "resource_cost": "Record measured provider usage and price assumptions; unknown is permitted."
+  },
+  "handling": {
+    "missing": "Keep failed and incomplete trials in denominator; report attrition.",
+    "exploratory": "All unlisted analyses explicitly marked exploratory.",
+    "negative": "Publish null, harmful and contrary observations alongside favorable ones.",
+    "external_validity": "Tasks and acceptance cases are openly accessible. A future separate holdout and externally calibrated task matching are needed for broad claims."
+  }
+}
