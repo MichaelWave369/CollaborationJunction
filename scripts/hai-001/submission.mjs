@@ -40,7 +40,7 @@ export function handle(args) {
  if(args.length!==6)throw Error("Usage: submission.mjs seal|verify SOURCE.js META.json HOLDOUT_COMMIT.json PUBLIC_SUBMISSION.json PRIVATE_NONCE.json");
  const [mode,...rest]=args;
  if(!["seal","verify"].includes(mode))throw Error("Expected seal or verify");
- const paths=rest.map(resolve);
+ const paths=rest.map(p=>resolve(p));
  checkCustodyPaths(mode,paths);
  const [sourcePath,metaPath,holdoutPath,pubPath,noncePath]=paths;
  const rawSource=readFileSync(sourcePath),rawMeta=readFileSync(metaPath);
