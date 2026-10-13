@@ -27,6 +27,8 @@ jobs:
           node --check scripts/hai-001/holdout.mjs
           node --check scripts/hai-001/submission-core.mjs
           node --check scripts/hai-001/submission.mjs
+          node --check scripts/hai-001/custody-sequence-core.mjs
+          node --check scripts/hai-001/custody-sequence.mjs
           node --check scripts/hai-001/calibration-check.mjs
           node scripts/hai-001/verify-lock.mjs
           node scripts/hai-001/score-answers.mjs examples/hai-001-synthetic-answers.json

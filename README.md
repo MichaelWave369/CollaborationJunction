@@ -90,3 +90,14 @@ node --check scripts/hai-001/submission.mjs
 ```
 
 Actual controlled trials require independent consent, custody timestamps, task calibration and a separately audited disposable-VM evaluator. **CI green only validates this inert custody code.**
+
+## Offline custody chronology preflight
+
+After sealed challenges (PR #7) and source submissions (PR #8), the read-only [custody sequencing checker](docs/HAI-001-CUSTODY-TIMELINE.md) screens the three proposed pre-reveal events: challenge commitment publication, source commitment publication, and witnessed submission cutoff. It checks exact public-file hashes, pack and trial binding, structured UTC chronology and claimed GitHub publication anchors.
+
+```sh
+node scripts/hai-001/custody-sequence.mjs TIMELINE.json HOLDOUT_PUBLIC.json SUBMISSION_PUBLIC.json
+node --test tests/hai001-custody-sequence.test.mjs
+```
+
+**Even a structurally valid chronology remains unverified.** The CLI never contacts GitHub, authenticates witnesses, establishes real timestamps, approves a reveal, or runs source code. All current examples are synthetic and no real trial observations exist.
