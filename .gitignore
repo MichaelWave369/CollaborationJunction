@@ -1,0 +1,9 @@
+# Local participant/custodian materials must never enter the public repo.
+private/
+.research-private/
+**/*.private.json
+**/*.nonce.json
+**/*.secret.json
+# Local editor/tool outputs
+node_modules/
+.DS_Store

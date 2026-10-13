@@ -23,6 +23,8 @@ jobs:
           node --check site/calibration/checker.mjs
           node --check scripts/hai-001/score-answers.mjs
           node --check scripts/hai-001/audit-calibration.mjs
+          node --check scripts/hai-001/holdout-core.mjs
+          node --check scripts/hai-001/holdout.mjs
           node --check scripts/hai-001/calibration-check.mjs
           node scripts/hai-001/verify-lock.mjs
           node scripts/hai-001/score-answers.mjs examples/hai-001-synthetic-answers.json
