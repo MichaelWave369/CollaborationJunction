@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c1421">
+  <meta name="description" content="Local-only HAI-001 calibration workbench. No uploads, trackers, or AI calls.">
+  <title>HAI-001 Calibration Workbench | CollaborationJunction</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="./workbench.css">
+  <script type="module" src="./workbench.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to calibration form</a>
+<div class="wb-shell">
+<header class="wb-header">
+  <a class="wb-brand" href="../">✳ <span>COLLABORATION<span class="wb-mint">JUNCTION</span></span></a>
+  <a href="../#lab">← Evidence Lab</a>
+</header>
+<main id="main" class="wb-main">
+  <section class="wb-intro">
+    <span class="section-kicker">HAI-001 / CALIBRATION C1 / 0.1.0</span>
+    <h1>Calibrate before<br><em>you compare.</em></h1>
+    <p>This workbench displays the frozen task definitions and helps prepare a local JSON record of specification reviews or unaided human-only pilot sessions. It does <strong>not</strong> run software, verify scores, perform an AI experiment, or certify task equivalence.</p>
+    <div class="wb-alert"><strong>Current study status: NOT STARTED.</strong> No actual calibrations or experiment results have been collected in this repository. The data you enter remain on this page until you explicitly download a file. Nothing is uploaded or saved automatically.</div>
+    <div class="wb-meta"><span>Frozen protocol: HAI-001 v0.1.0</span><span>12 tasks</span><span id="pack-status">Checking task-pack integrity…</span></div>
+  </section>
+  <section class="wb-panel wb-split" aria-label="Operator safeguards">
+    <div>
+      <h2>Before recording anything</h2>
+      <p>Use anonymous codes, not names, emails, usernames, or other personal identifiers. Real participants require independently documented informed consent before any observation is collected. Consent records must be kept outside this public repository.</p>
+      <p>Never run untrusted generated code on a personal or production computer. This page does not run code or score solutions.</p>
+    </div>
+    <div>
+      <h2>What the record can prove</h2>
+      <p>A JSON export preserves what someone entered and ties it to a fixed task-pack hash. It does not prove a person was present, that consent occurred, that time was accurately measured, or that scores were independently verified.</p>
+      <p><a href="https://github.com/MichaelWave369/CollaborationJunction/blob/main/docs/HAI-001-CALIBRATION.md" target="_blank" rel="noopener noreferrer">Read calibration protocol ↗</a></p>
+    </div>
+  </section>
+  <section class="wb-grid">
+    <div class="wb-panel">
+      <span class="section-kicker">01 / CHOOSE RECORD TYPE</span>
+      <form id="record-form" autocomplete="off">
+        <div class="field">
+          <label for="origin">Evidence origin</label>
+          <select id="origin"><option value="SYNTHETIC">SYNTHETIC: UI testing only</option><option value="OBSERVED">OBSERVED: genuine consented observation</option></select>
+          <small>Switching origin after collecting entries requires starting a fresh file. Synthetic entries must never become experimental data.</small>
+        </div>
+        <label class="checkbox-line"><input id="consent" type="checkbox"> I attest that any OBSERVED entry corresponds to a real authorized session and informed consent was obtained. This box is an assertion, not proof.</label>
+        <div class="field">
+          <label for="mode">Calibration activity</label>
+          <select id="mode"><option value="review">Independent specification review</option><option value="pilot">Human-only pilot (condition A)</option></select>
+        </div>
+        <div class="field">
+          <label for="task">Frozen task</label>
+          <select id="task" required></select>
+        </div>
+        <div id="task-panel" class="task-detail" aria-live="polite"></div>
+        <div class="field">
+          <label id="operator-label" for="operator-id">Reviewer code</label>
+          <div class="wb-inline"><input id="operator-id" required maxlength="48" pattern="[A-Z0-9_-]{3,48}" placeholder="RATER_001"><button id="make-id" type="button">Generate code</button></div>
+          <small>Opaque code only; do not enter names or contact information. Separate real individuals require separate codes.</small>
+        </div>
+        <div id="review-inputs">
+          <div class="wb-rating">
+            <div class="field"><label for="clarity">Specification clarity (1–5)</label><select id="clarity"><option value="5">5 · Very clear</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1 · Unclear</option></select></div>
+            <div class="field"><label for="effort">Estimated effort (1–5)</label><select id="effort"><option value="1">1 · Easiest</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · Hardest</option></select></div>
+            <div class="field"><label for="ambiguity">Ambiguity (1–5)</label><select id="ambiguity"><option value="1">1 · Minimal</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · Severe</option></select></div>
+          </div>
+        </div>
+        <div id="pilot-inputs" hidden>
+          <p class="wb-warning">Condition A means no generative AI assistance. All tasks have a 25-minute limit. The stopwatch is advisory and does not attest to what happened.</p>
+          <div class="wb-stopwatch"><span id="elapsed" aria-live="off">00:00</span><button type="button" id="start-clock">Start</button><button type="button" id="stop-clock" disabled>Stop</button><button type="button" id="reset-clock">Reset</button></div>
+          <div class="wb-rating">
+            <div class="field"><label for="seconds">Wall seconds (1–1500)</label><input id="seconds" type="number" min="1" max="1500" step="1" placeholder="300"></div>
+            <div class="field"><label for="passed">Acceptance cases passed (0–5)</label><select id="passed"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+          </div>
+          <label class="checkbox-line"><input type="checkbox" id="crosschecked"> An independent scorer actually checked the case results against retained test receipts. Do not tick this based on a model's claim.</label>
+        </div>
+        <p id="form-status" class="wb-status" role="status" aria-live="polite"></p>
+        <button class="wb-submit" type="submit" id="add-entry">Add local record</button>
+      </form>
+    </div>
+    <aside class="wb-panel wb-ledger" aria-label="Local work ledger">
+      <span class="section-kicker">02 / LOCAL EVIDENCE LEDGER</span>
+      <h2>Unsaved session</h2>
+      <p class="wb-caption">In browser memory only. Closing or refreshing the page clears these entries.</p>
+      <div class="wb-counts"><div><b id="reviews-count">0</b><span>Reviews</span></div><div><b id="pilots-count">0</b><span>Pilots</span></div><div><b id="tasks-count">0</b><span>Tasks covered</span></div></div>
+      <div id="ledger-items" class="wb-list" aria-live="polite"><p>No entries yet.</p></div>
+      <div class="wb-export">
+        <button id="export-json" type="button" disabled>Download local JSON</button>
+        <label for="import-json">Resume from local JSON (never uploaded)</label>
+        <input type="file" id="import-json" accept=".json,application/json">
+        <p id="import-status" class="wb-status" role="status" aria-live="polite"></p>
+        <button id="clear-session" class="wb-secondary" type="button">Clear session</button>
+      </div>
+      <p class="wb-caption">To run the standalone structural checker on an exported file, use <code>node scripts/hai-001/calibration-check.mjs YOUR_FILE.json</code>. It never grants scientific approval.</p>
+    </aside>
+  </section>
+  <section class="wb-panel wb-ethics">
+    <h2>Required human review remains</h2>
+    <p>Two specification reviews and two human-only feasibility pilots per task are a preliminary coverage screen, not proof that tasks are equally difficult. Do not add these observations to the public site's original-experiment counter. Do not place participant-level data in a public issue or pull request.</p>
+    <a href="https://github.com/MichaelWave369/CollaborationJunction/blob/main/protocols/HAI-001/README.md">Read the frozen protocol ↗</a>
+  </section>
+</main>
+<footer class="wb-footer"><span>COLLABORATIONJUNCTION · RESEARCH TOOLS</span><span>LOCAL-ONLY CAPTURE · NO AUTOMATIC STORAGE · NOT AN EXPERIMENT</span></footer>
+</div>
+</body>
+</html>

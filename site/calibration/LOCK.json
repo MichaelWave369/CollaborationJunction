@@ -1,0 +1,12 @@
+{
+  "schema": "CJ-HAI001-LOCK-v1",
+  "version": "0.1.0",
+  "algorithm": "SHA-256",
+  "files": {
+    "conditions.json": "41d7b0669e90e98a5152cf33abc508c2403f697c07958c345c0aaa477aa88d70",
+    "fixtures.json": "addf6a904aa0f11e395c72b72adea9f76f4683055cae9819925cae6e9b35b66d",
+    "rubric.json": "1dca65e1cc274a2c99b41e798a3f88ef06838ac9e633ba0c4d6de3ac6c074847",
+    "tasks.json": "685a9f88feac89da87aaa75dc78e2944d419e4532f7f15a8a43726e5c3d662dd"
+  },
+  "pack_sha256": "3427497a87ff11f7f39beb32daea7b454457c0ba4c7ca9ed04debc4d647bf803"
+}

@@ -17,6 +17,8 @@ jobs:
         run: |
           node --test tests/*.test.mjs
           node --check site/assets/app.js
+          node --check site/calibration/core.mjs
+          node --check site/calibration/workbench.mjs
           node --check scripts/hai-001/calibration-check.mjs
           node scripts/hai-001/verify-lock.mjs
           node scripts/hai-001/validate-receipt.mjs examples/hai-001-synthetic-receipt.json

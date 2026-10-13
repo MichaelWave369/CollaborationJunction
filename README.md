@@ -48,3 +48,9 @@ Separate **source says** from **independently tested**. Record contrary results.
 **Ledger above ego. Evidence above slogans.**
 
 MIT License. Original implementation; citations link to external research, not imported code.
+
+## Local-first HAI-001 calibration workbench
+
+The public Pages site links to `site/calibration/`. It displays exact SHA-256-checked copies of the frozen task descriptions and public acceptance fixtures, and lets an operator prepare **local JSON exports only** for independent specification reviews and human-only condition-A feasibility pilots. It has no login, database, telemetry, generative AI, candidate-code execution or automatic submissions.
+
+Calibration is **NOT STARTED**. The UI and validators do not establish consent, score accuracy, difficulty matching, or a valid causal experiment. Human reviewers must examine any later observations. See [operator guidance](docs/HAI-001-WORKBENCH.md).
