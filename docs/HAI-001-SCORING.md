@@ -62,3 +62,7 @@ Public records should contain only carefully reviewed, consented, sanitized data
 - Before future experimentation, independent reviewers must approve the methodology, sandbox and valid test suite.
 
 **Scientific state remains: CALIBRATION NOT STARTED. EXPERIMENT RUNS: ZERO.**
+
+## Preventing public-fixture copying in a future study
+
+The five public cases in this scorer are **practice/transparent verification**, not a credible secret holdout. An independent evaluator must prepare fresh, hidden challenge inputs and answers without exposure to future submissions. The new [HAI-001 sealed challenge protocol](HAI-001-HOLDOUT.md) offers offline commitment/reveal of the exact private file bytes. It is not a candidate-code executor or proof of independent administration. Study state remains **NOT STARTED**.

@@ -65,3 +65,13 @@ node --test tests/hai001-scoring.test.mjs
 ```
 
 See [scoring limitations and calibration audit](docs/HAI-001-SCORING.md). Original observed experiments: **zero**.
+
+## Sealed challenge-set preparation (HAI-001)
+
+The five public acceptance cases can be copied. Before any actual study, an independently held, not-yet-published challenge set should be specified **before trial submissions**, with an externally reviewable commitment.
+
+New offline `scripts/hai-001/holdout.mjs` tooling supports **commit/reveal** for private JSON-only cases using fresh SHA-256 nonce commitments. The private case file and secret must live **outside the Git repository**. It runs no candidate programs, opens no network connections, and produces no study outcome.
+
+See [sealed challenge governance](docs/HAI-001-HOLDOUT.md). The included example is **synthetic and publicly visible, not a secret holdout**.
+
+**Status: no real holdout committed, no actual calibration or controlled trials performed.**
