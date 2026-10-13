@@ -40,9 +40,9 @@ test("rejects off-protocol, duplicate, missing, bad-value, and huge-depth answer
   {...sample,origin:"TEMPLATE"},
   {...sample,answers:sample.answers.slice(1)},
   {...sample,answers:[...sample.answers.slice(0,4),sample.answers[0]]},
-  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,case_id:"INVALID"}}},
-  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,email:"not permitted"}}},
-  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,kind:"MISSING",value:null}}},
+  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,case_id:"INVALID"})},
+  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,email:"not permitted"})},
+  {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,kind:"MISSING",value:null})},
   {...sample,answers:sample.answers.map((a,i)=>i? a : {...a,kind:"VALUE",value:{unsafe:BigInt(2)}})},
   {...sample,pilot_id:"person@example.com"}
  ];
