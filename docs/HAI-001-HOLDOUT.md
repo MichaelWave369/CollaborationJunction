@@ -64,3 +64,7 @@ node --check scripts/hai-001/holdout-core.mjs
 CI tests only deliberately **SYNTHETIC** examples and does not contain, generate or publish any real hidden challenge sets. It cannot attest that a future holdout was properly administered.
 
 **Current calibration count: 0. Experimental run count: 0.**
+
+## Relationship to submission custody
+
+The subsequent [submission custody protocol](HAI-001-SUBMISSION-CUSTODY.md) binds participant source bytes and declared conditions to a prior holdout commitment, so a later reveal can detect modified candidate files. The source custody mechanism still requires **independently witnessed chronological publication** of the challenge commitment and then each submission commitment before revealing private tests. Neither tool executes submitted code or provides research conclusions.

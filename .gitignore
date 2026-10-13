@@ -1,9 +1,13 @@
-# Local participant/custodian materials must never enter the public repo.
+# Private or potentially sensitive research materials (not a security boundary).
 private/
 .research-private/
 **/*.private.json
 **/*.nonce.json
 **/*.secret.json
-# Local editor/tool outputs
+**/*-private-submission*.json
+**/*-private-source*.js
+**/*-private-source*.mjs
+**/*-private-metadata*.json
+**/research-private/
 node_modules/
 .DS_Store

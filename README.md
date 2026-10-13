@@ -75,3 +75,18 @@ New offline `scripts/hai-001/holdout.mjs` tooling supports **commit/reveal** for
 See [sealed challenge governance](docs/HAI-001-HOLDOUT.md). The included example is **synthetic and publicly visible, not a secret holdout**.
 
 **Status: no real holdout committed, no actual calibration or controlled trials performed.**
+
+## Submission custody and safe-evaluator design
+
+The next research integrity step is an **offline, non-executing source commitment** tied to a previously sealed private challenge. The `scripts/hai-001/submission.mjs` tool binds the exact source and its self-reported condition metadata to the hidden-test commitment, with a fresh random nonce. A private secret and source file stay outside the public repository.
+
+No candidate implementation, model, or actual experiment is executed. No real submissions have been collected.
+
+See [source submission custody](docs/HAI-001-SUBMISSION-CUSTODY.md) and the [future isolated evaluator threat model](docs/HAI-001-EXECUTION-THREAT-MODEL.md).
+
+```sh
+node --test tests/hai001-submission.test.mjs
+node --check scripts/hai-001/submission.mjs
+```
+
+Actual controlled trials require independent consent, custody timestamps, task calibration and a separately audited disposable-VM evaluator. **CI green only validates this inert custody code.**
