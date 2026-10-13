@@ -1,0 +1,42 @@
+{
+  "schema": "CJ-HAI001-ANSWERS-v1",
+  "protocol": "HAI-001",
+  "task_pack_sha256": "3427497a87ff11f7f39beb32daea7b454457c0ba4c7ca9ed04debc4d647bf803",
+  "origin": "SYNTHETIC",
+  "task_id": "HAI-001-T01",
+  "pilot_id": "DEMO_PILOT_01",
+  "answers": [
+    {
+      "case_id": "HAI-001-T01-C01",
+      "kind": "VALUE",
+      "value": [
+        "alpha",
+        "beta-two"
+      ]
+    },
+    {
+      "case_id": "HAI-001-T01-C02",
+      "kind": "VALUE",
+      "value": [
+        "data-quality",
+        "re-entry"
+      ]
+    },
+    {
+      "case_id": "HAI-001-T01-C03",
+      "kind": "VALUE",
+      "value": []
+    },
+    {
+      "case_id": "HAI-001-T01-C04",
+      "kind": "VALUE",
+      "value": [
+        "wrong-answer"
+      ]
+    },
+    {
+      "case_id": "HAI-001-T01-C05",
+      "kind": "MISSING"
+    }
+  ]
+}

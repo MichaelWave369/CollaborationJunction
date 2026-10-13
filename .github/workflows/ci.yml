@@ -19,7 +19,12 @@ jobs:
           node --check site/assets/app.js
           node --check site/calibration/core.mjs
           node --check site/calibration/workbench.mjs
+          node --check site/calibration/score-core.mjs
+          node --check site/calibration/checker.mjs
+          node --check scripts/hai-001/score-answers.mjs
+          node --check scripts/hai-001/audit-calibration.mjs
           node --check scripts/hai-001/calibration-check.mjs
           node scripts/hai-001/verify-lock.mjs
+          node scripts/hai-001/score-answers.mjs examples/hai-001-synthetic-answers.json
           node scripts/hai-001/validate-receipt.mjs examples/hai-001-synthetic-receipt.json
           node scripts/hai-001/calibration-check.mjs calibration/HAI-001/observations.template.json

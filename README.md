@@ -54,3 +54,14 @@ MIT License. Original implementation; citations link to external research, not i
 The public Pages site links to `site/calibration/`. It displays exact SHA-256-checked copies of the frozen task descriptions and public acceptance fixtures, and lets an operator prepare **local JSON exports only** for independent specification reviews and human-only condition-A feasibility pilots. It has no login, database, telemetry, generative AI, candidate-code execution or automatic submissions.
 
 Calibration is **NOT STARTED**. The UI and validators do not establish consent, score accuracy, difficulty matching, or a valid causal experiment. Human reviewers must examine any later observations. See [operator guidance](docs/HAI-001-WORKBENCH.md).
+
+## Deterministic HAI-001 case scoring
+
+The static [JSON case checker](site/calibration/checker.html) and Node scorer compare a local **JSON output file** to the five frozen public fixture values for its task. They do not execute generated code, prove independent observation, or establish task equivalence.
+
+```sh
+node scripts/hai-001/score-answers.mjs examples/hai-001-synthetic-answers.json
+node --test tests/hai001-scoring.test.mjs
+```
+
+See [scoring limitations and calibration audit](docs/HAI-001-SCORING.md). Original observed experiments: **zero**.
