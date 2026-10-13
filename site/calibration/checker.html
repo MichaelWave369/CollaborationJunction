@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c1421">
+<meta name="description" content="HAI-001 deterministic local JSON case checker. Never executes submitted code.">
+<title>HAI-001 Case Checker | CollaborationJunction</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="./workbench.css">
+<script type="module" src="./checker.mjs"></script>
+</head>
+<body><a class="skip" href="#main">Skip to case checker</a>
+<div class="wb-shell">
+<header class="wb-header"><a class="wb-brand" href="../">✳ <span>COLLABORATION<span class="wb-mint">JUNCTION</span></span></a><a href="./">← Calibration Workbench</a></header>
+<main id="main" class="wb-main">
+<section class="wb-intro">
+<span class="section-kicker">HAI-001 / EVIDENCE CHECKER / V0.1.0</span>
+<h1>Score the outputs.<br><em>Not the hype.</em></h1>
+<p>Compare five submitted JSON answers against the frozen public acceptance cases. The checker performs <strong>data comparisons only</strong>. It never runs JavaScript candidates, AI models, or any uploaded code.</p>
+<div class="wb-alert"><strong>Evidence boundary:</strong> A match demonstrates that a supplied JSON value equals a published expected value. It does not prove who created that value, what tools they used, whether consent was obtained, or that the underlying software works outside these five cases.</div>
+<div class="wb-meta"><span>12 frozen tasks</span><span>5 acceptance cases per task</span><span id="integrity">Verifying frozen fixtures…</span></div>
+</section>
+<div class="wb-grid">
+<section class="wb-panel">
+<span class="section-kicker">01 / REVIEW INPUT</span>
+<h2>Local JSON answer file</h2>
+<p>Choose a structured JSON file, not source code, chat transcripts or private records. The file remains in browser memory. No upload, account, storage or analytics.</p>
+<p><a href="./example-answers.json" download>Download a deliberately synthetic example ↗</a></p>
+<div class="field"><label for="answer-file">Select answers.json (maximum 1 MiB)</label><input id="answer-file" type="file" accept=".json,application/json" disabled></div>
+<p id="checker-status" class="wb-status" role="status" aria-live="polite">Loading frozen source…</p>
+<div class="wb-export"><button id="download-receipt" disabled type="button">Download score receipt</button></div>
+<p class="wb-caption">Exported receipts contain case IDs, comparison flags, the input-file SHA-256, and the frozen pack hash. Raw answer values are deliberately omitted from score receipts.</p>
+</section>
+<section class="wb-panel">
+<span class="section-kicker">02 / COMPARISON REPORT</span>
+<h2 id="score-heading">No answers checked</h2>
+<p id="score-detail">Use a synthetic sample to check how the scoring works. The study still has zero recorded experimental runs.</p>
+<div id="case-results" class="wb-list" aria-live="polite"></div>
+<p class="wb-warning">A passing score is <strong>not</strong> evidence of independent observation, implementation validity, task equivalence, or scientific significance. Research calibration requires human review and separate corroborating records.</p>
+</section>
+</div>
+<section class="wb-panel wb-ethics">
+<h2>Cross-check the calibration ledger</h2>
+<p>To compare human-entered pilot totals to the outputs themselves, keep the original answer files privately and run the repository's local audit tool. Never commit OBSERVED participant files to GitHub.</p>
+<pre class="wb-json">node scripts/hai-001/score-answers.mjs answers.json
+node scripts/hai-001/audit-calibration.mjs calibration.json answers.json</pre>
+<a href="https://github.com/MichaelWave369/CollaborationJunction/blob/main/docs/HAI-001-SCORING.md">Read scoring and custody limits ↗</a>
+</section>
+</main>
+<footer class="wb-footer"><span>COLLABORATIONJUNCTION · HAI-001</span><span>NO EXECUTION · NO TELEMETRY · NO SCIENTIFIC SIGNOFF</span></footer>
+</div>
+</body>
+</html>
