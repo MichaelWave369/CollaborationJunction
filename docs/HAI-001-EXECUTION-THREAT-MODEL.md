@@ -45,3 +45,7 @@ The future harness must use independent unseen cases bound to a prior challenge 
 A future runner may be designed only after explicit review of: host isolation, participant consent, challenge quality, custody ordering, threat-model tests, logging/audit policies, privacy protection, and human authorization. Passing a static CI test suite is not sufficient.
 
 **Current HAI-001 study state: NOT RUN.**
+
+## Custody chronology must precede any later execution
+
+The [offline custody sequence checker](HAI-001-CUSTODY-TIMELINE.md) screens claimed publication order for holdout, source submission and submission-window cutoff. It does **not** verify external GitHub anchors or authenticate independent witnesses, and it **never** grants permission to reveal private tests or execute submitted code. An approved human verification process is required before any future runner is designed or authorized.
